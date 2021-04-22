@@ -4,7 +4,7 @@
   "description": "Employee Management Software",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node dist/src/app.js",
     "postinstall": "tsc",
     "dev": "nodemon --watch 'src/**/*/ts' --exec 'ts-node' --files src/app.ts",
     "build": "rm -rf build && tsc -p .",
