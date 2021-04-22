@@ -4,9 +4,8 @@
   "description": "Employee Management Software",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
-    "build": "tsc -p ."
+    "start": "nodemon --watch 'src/**/*/ts' --exec 'ts-node' --files src/app.ts",
+    "build": "rm -rf build && tsc -p ."
   },
   "keywords": [
     "review",

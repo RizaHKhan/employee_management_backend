@@ -3,6 +3,9 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import { Server } from "typescript-rest";
 
+// Imorting all typescript-rest classes for wrapping Express paths
+import "./handlers";
+
 const app: Application = express();
 
 app.use(cors());
@@ -15,9 +18,5 @@ let port = parseInt(process.env.PORT || "");
 if (isNaN(port) || port === 0) {
   port = 3000;
 }
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("hello");
-});
 
 app.listen(port, () => console.log("server running"));
