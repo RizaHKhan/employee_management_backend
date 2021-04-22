@@ -1,0 +1,16 @@
+# Employee Management App
+
+This is an app that has been brewing in my mind for sometime now. Originally, this was built way back when in **Excel** of all places.
+
+That project was a failure, and I realized I bit off too much that I could chew. Fast forward a couple of years, I have the required skills to do a better job.
+
+This app is meant for medium sized businesses. The business has a number of departments and they have each a heirchery of managers, leads and employees. This app will do the heavy lifting of corresponding with all of the key players. Paperwork can be shared about employes. Viewed directly in the app by those accredited and we could even extend the app to be used by all employees at some point. Namely to provide feedback or sign documentation.
+
+# Stack
+
+NodeJS
+Express
+Postgres
+VueJS
+
+We will need to incorporate some type of Email notification.
