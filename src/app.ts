@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import { Server } from "typescript-rest";
 
-// Imorting all typescript-rest classes for wrapping Express paths
+// Importing all typescript-rest classes for wrapping Express paths
 import "./handlers";
 
 const app: Application = express();
