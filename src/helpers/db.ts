@@ -3,6 +3,7 @@ import ORMConfig from "../ormconfig";
 
 export const DBConnect = async () => {
   let connection: Connection | undefined;
+
   try {
     connection = getConnection();
   } catch (e) {

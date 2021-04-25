@@ -24,3 +24,8 @@ We will need to incorporate some type of Email notification.
 # DB Connection steps
 
 1. You need to configure your database connection
+
+# Typescript-Rest
+
+The the params are the req object
+The return statement is the `response.send`

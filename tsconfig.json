@@ -8,7 +8,7 @@
     },
     "typeRoots": ["./src/types"],
     "resolveJsonModule": true,
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "./dist",
@@ -18,7 +18,8 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "sourceMap": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "exclude": ["./node_modules/**/*", "./build/**/*"],
   "include": ["./src/**/*"]

@@ -1,6 +1,5 @@
-import express, { Application, Request, Response, NextFunction } from "express";
+import express, { Application, Request, Response } from "express";
 import cors from "cors";
-import bodyParser from "body-parser";
 import { Server } from "typescript-rest";
 
 // Importing all typescript-rest classes for wrapping Express paths
@@ -10,8 +9,10 @@ import { TryDBConnect } from "./helpers";
 export const app: Application = express();
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(async (req: Request, res: Response, next: NextFunction) => {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(async (req: Request, res: Response, next) => {
   await TryDBConnect(() => {
     res.json({
       error: "Database connection error, please try again later",
