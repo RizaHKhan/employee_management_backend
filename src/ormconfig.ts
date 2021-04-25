@@ -17,6 +17,9 @@ export default {
   reconnectInterval: 2000,
   entities: [__dirname + `/entity/**/*.${isCompiled ? "js" : "ts"}`],
   migrations: [`src/migration/**/*.${isCompiled ? "js" : "ts"}`],
+  subscribers: [
+    __dirname + `/subscriptions/*.subscribe.${isCompiled ? "js" : "ts"}`,
+  ],
   cli: {
     entitiesDir: "src/entity",
     migrationsDir: "src/migration",
