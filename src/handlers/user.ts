@@ -8,8 +8,7 @@ export class UserController {
   @GET
   async getUsers() {
     try {
-      const userRepo = getRepository(User);
-      const users = await userRepo.find();
+      const users = await getRepository(User).find();
       return resOK({ users });
     } catch (e) {
       return resError(e.message);
@@ -20,9 +19,9 @@ export class UserController {
   @GET
   async getUserByEmail(@PathParam("email") email: string) {
     try {
-      const userRepo = getRepository(User);
-      const user = await userRepo
+      const user = await getRepository(User)
         .createQueryBuilder("user")
+        .select("user")
         .where("user.email = :email", { email })
         .getOne();
       return resOK({ user });
@@ -34,8 +33,7 @@ export class UserController {
   @POST
   async index(user: User) {
     try {
-      const userRepo = getRepository(User);
-      await userRepo.save(user);
+      await getRepository(User).save(user);
       return resOK({ user });
     } catch (e) {
       return resError(e.message);
