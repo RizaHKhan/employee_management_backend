@@ -7,11 +7,10 @@ import { Server } from "typescript-rest";
 import "./handlers";
 import { TryDBConnect } from "./helpers";
 
-const app: Application = express();
+export const app: Application = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-
 app.use(async (req: Request, res: Response, next: NextFunction) => {
   await TryDBConnect(() => {
     res.json({
@@ -27,4 +26,4 @@ if (isNaN(port) || port === 0) {
   port = 3000;
 }
 
-app.listen(port, () => console.log("server running"));
+app.listen(port, () => console.log(`Listening on port:${port}`));

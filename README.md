@@ -20,3 +20,7 @@ We will need to incorporate some type of Email notification.
 1. HR manager login into app.
 2. Proceeds to specify **departments** and their **managers**
 3. When adding managers, email will be a required field. Once saved, an email will be sent to the manager who will be sent a link to register with the app. Upon their first login, they will be asked to enter a new password.
+
+# DB Connection steps
+
+1. You need to configure your database connection

@@ -5,7 +5,9 @@ export const DBConnect = async () => {
   let connection: Connection | undefined;
   try {
     connection = getConnection();
-  } catch (e) {}
+  } catch (e) {
+    console.log("Unable to connect to database");
+  }
 
   try {
     if (connection) {
@@ -15,7 +17,7 @@ export const DBConnect = async () => {
     } else {
       await createConnection(ORMConfig);
     }
-    console.error("SUCESS: Database connection made!");
+    console.error("SUCCESS: Database connection made!");
   } catch (e) {
     console.error("ERROR: Database connection failed", e);
     throw e;
