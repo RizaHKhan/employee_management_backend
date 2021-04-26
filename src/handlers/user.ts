@@ -33,7 +33,12 @@ export class UserController {
   @POST
   async index(user: User) {
     try {
-      await getRepository(User).save(user);
+      await getRepository(User)
+        .createQueryBuilder()
+        .insert()
+        .into(User)
+        .values(user)
+        .execute();
       return resOK({ user });
     } catch (e) {
       return resError(e.message);
