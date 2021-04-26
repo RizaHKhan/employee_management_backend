@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, Index } from "typeorm";
-import { IsEmail } from "class-validator";
 
 @Entity({ name: "user" })
 export class User {
@@ -8,7 +7,6 @@ export class User {
 
   @Index({ unique: true })
   @Column("varchar", { length: 500 })
-  @IsEmail()
   email: string | null = null;
 
   @Column("varchar", { length: 1000 })
