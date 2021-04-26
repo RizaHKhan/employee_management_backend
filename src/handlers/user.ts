@@ -1,4 +1,4 @@
-import { GET, Path, POST, PathParam } from "typescript-rest";
+import { GET, Path, POST, PathParam, PUT } from "typescript-rest";
 import { User } from "../entity/User";
 import { resOK, resError } from "../helpers";
 import { getRepository } from "typeorm";
@@ -24,6 +24,25 @@ export class UserController {
         .select("user")
         .where("user.email = :email", { email })
         .getOne();
+      return resOK({ user });
+    } catch (e) {
+      return resError(e.message);
+    }
+  }
+
+  @PUT
+  @Path("/:email")
+  async updateUser(
+    @PathParam("email") email: string,
+    data: User
+  ): Promise<object> {
+    try {
+      const user = await getRepository(User)
+        .createQueryBuilder()
+        .update(User)
+        .set({ ...data })
+        .where("email = :email", { email })
+        .execute();
       return resOK({ user });
     } catch (e) {
       return resError(e.message);
