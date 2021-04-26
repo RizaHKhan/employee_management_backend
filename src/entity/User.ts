@@ -30,6 +30,6 @@ export class User {
   @Column({ type: "timestamptz", default: "now()" })
   createdAt: Date = new Date();
 
-  @Column({ type: "timestamptz", nullable: true })
+  @Column({ type: "timestamptz", default: "now()" })
   updatedAt: Date = new Date();
 }
