@@ -19,7 +19,8 @@
     "declaration": true,
     "sourceMap": false,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
   },
   "exclude": ["./node_modules/**/*", "./build/**/*"],
   "include": ["./src/**/*"]
