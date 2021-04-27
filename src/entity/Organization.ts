@@ -11,4 +11,7 @@ export class Organization {
 
   @Column("varchar", { length: 200 })
   address: string | null = null;
+
+  @Column("varchar", { length: 200 })
+  address: string | null = null;
 }
