@@ -23,16 +23,16 @@ export class UserSubscriber implements EntitySubscriberInterface<User> {
     return this.hashPassword(event.entity);
   }
 
-  async beforeUpdate({
-    entity,
-    databaseEntity,
-  }: UpdateEvent<User>): Promise<void> {
-    // update the updated on date
-    entity.updatedAt = new Date();
+  // async beforeUpdate({
+  //   entity,
+  //   databaseEntity,
+  // }: UpdateEvent<User>): Promise<void> {
+  // update the updated on date
+  // entity.updatedAt = new Date();
 
-    // Deal with password issues at a later time
-    // if (entity.password !== databaseEntity?.password) {
-    //   await this.hashPassword(entity);
-    // }
-  }
+  // Deal with password issues at a later time
+  // if (entity.password !== databaseEntity?.password) {
+  //   await this.hashPassword(entity);
+  // }
+  // }
 }
