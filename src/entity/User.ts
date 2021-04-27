@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, Index } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  Index,
+  BeforeUpdate,
+} from "typeorm";
 
 @Entity({ name: "user" })
 export class User {
@@ -30,6 +36,6 @@ export class User {
   @Column({ type: "timestamptz", default: "now()" })
   createdAt: Date = new Date();
 
-  @Column({ type: "timestamptz", default: "now()" })
+  @Column({ type: "timestamptz", default: "now()", nullable: true })
   updatedAt: Date = new Date();
 }

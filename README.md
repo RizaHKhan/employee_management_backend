@@ -29,3 +29,7 @@ We will need to incorporate some type of Email notification.
 
 The the params are the req object
 The return statement is the `response.send`
+
+# Form submissions
+
+Right now form data isn't being accepted by the API. There are ways you can parse that data, or you could just send `x-www-form-urlencoded`
