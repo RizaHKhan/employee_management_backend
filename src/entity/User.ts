@@ -3,7 +3,8 @@ import {
   PrimaryGeneratedColumn,
   Column,
   Index,
-  BeforeUpdate,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from "typeorm";
 
 @Entity({ name: "user" })
@@ -33,9 +34,9 @@ export class User {
   @Column("text", { nullable: true })
   about: string = "";
 
-  @Column({ type: "timestamptz", default: "now()" })
-  createdAt: Date = new Date();
+  @CreateDateColumn()
+  createdAt: Date;
 
-  @Column({ type: "timestamptz", default: "now()", nullable: true })
-  updatedAt: Date = new Date();
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
