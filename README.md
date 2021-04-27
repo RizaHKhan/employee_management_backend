@@ -33,3 +33,33 @@ The return statement is the `response.send`
 # Form submissions
 
 Right now form data isn't being accepted by the API. There are ways you can parse that data, or you could just send `x-www-form-urlencoded`
+
+# Database Design
+
+Golden Rules
+
+1. Duplicate information is bad
+2. Accuracy & Completness is good
+
+Design Process
+
+1. Purpose
+2. Collect Information
+3. Divide the entities into tables
+4. Turn the data points into columns
+5. Identify Primary and Foreign Key
+6. Normalize and Refine
+
+Normalize:
+
+1. First Normal Form
+2. Second Normal Form
+3. Third Normal Form
+
+| Name          | Primary Key  | Foreign Key         | Comment                                                                                                                                                                                                                     |
+| ------------- | ------------ | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Org           | UUID         |                     | Organization that will categorize all of the users (admin/managers/employees) underneath it                                                                                                                                 |
+| User          | UUID / Email | Role UUID, Org UUID | Any user can be here.                                                                                                                                                                                                       |
+| Role          | UUID         |                     | Specifies the various roles in this application. There would be permissions that can be added to this table so that the front-end does the appropriate routing. Admin, Manager, Employee                                    |
+| Criteria      | UUID         |                     | This table has all of the questions that we will be rating the employee on. Each organization can have their own list of criteria's that then the managers can choose (from a dropdown list) and then rate the employees on |
+| Quarter-Score | Date         | User-UUID,          |                                                                                                                                                                                                                             |
